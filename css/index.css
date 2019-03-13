@@ -1,7 +1,7 @@
 h1{
     padding:20px;
 }
-button {
+.btn{
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
