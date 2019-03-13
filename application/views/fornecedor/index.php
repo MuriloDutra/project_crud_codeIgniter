@@ -2,11 +2,23 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="<?= base_url("css/bootstrap.css") ?>">
+        <link rel="stylesheet" href="css/index.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
         <div class="container">
             <h1>Fornecedores cadastrados</h1>
+            <?php 
+                echo form_open();
+                
+                echo form_button(array(
+                    "class" => "btn btn-primary",
+                    "content" => "Adicionar fornecedor",
+                    "type" => "submit"
+                ));
+
+                echo form_close();
+            ?>
             <table class="table table-striped table-bordered">
             <thead>
                 <th>Nome</th>
@@ -16,8 +28,7 @@
                 <th>Deletar</th>
             </thead>
             <tbody>
-                <?php 
-                    foreach($fornecedores as $fornecedor) : ?>
+                <?php foreach($fornecedores as $fornecedor) : ?>
                     <tr>
                         <td><?=$fornecedor['nome']?></td>
                         <td><?=$fornecedor['email']?></td>
