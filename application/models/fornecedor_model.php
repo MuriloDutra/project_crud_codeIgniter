@@ -5,4 +5,9 @@
         {
             return $this->db->get("fornecedor")->result_array();
         }
+
+        public function adicionaFornecedor($fornecedor)
+        {
+            $this->db->insert("fornecedor", $fornecedor);
+        }
     }
