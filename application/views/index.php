@@ -37,6 +37,7 @@
                                 echo form_open("fornecedor/edita");
 
                                 echo form_input(array(
+                                    "name" => "id",
                                     "type" => "hidden",
                                     "value" => $fornecedor['id']));
 
@@ -53,6 +54,7 @@
                                 echo form_open("fornecedor/detalhes");
                                 
                                 echo form_input(array(
+                                    "name" => "id",
                                     "type" => "hidden",
                                     "value" => $fornecedor['id']));
                                     
@@ -67,8 +69,9 @@
                         <td>
                             <?php 
                                 echo form_open("fornecedor/deleta");
-                                
+
                                 echo form_input(array(
+                                    "name" => "id",
                                     "type" => "hidden",
                                     "value" => $fornecedor['id']));
 

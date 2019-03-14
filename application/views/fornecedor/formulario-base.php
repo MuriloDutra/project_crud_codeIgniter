@@ -1,10 +1,16 @@
 <?php 
+    echo form_input(array(
+        "name" => "id",
+        "type" => "hidden",
+        "value" => $fornecedor['id']
+    ));
+
     echo form_label("Nome", "nome");
     echo form_input(array(
         "name" => "nome",
         "class" => "form-control",
         "id" => "nome",
-        "value" => "",
+        "value" => $fornecedor['nome'],
         "maxlength" => "255"
     ));
 
@@ -13,7 +19,7 @@
         "name" => "email",
         "class" => "form-control",
         "id" => "email",
-        "value" => "",
+        "value" => $fornecedor['email'],
         "maxlength" => "255"
     ));
 
@@ -22,7 +28,7 @@
         "name" => "telefone",
         "class" => "form-control",
         "id" => "telefone",
-        "value" => "",
+        "value" => $fornecedor['telefone'],
         "maxlength" => "14"
     ));
 
@@ -32,7 +38,7 @@
         "class" => "form-control",
         "placeholder" => "Exemplo: 12345678",
         "id" => "cep",
-        "value" => "",
+        "value" => $fornecedor['cep'],
         "maxlength" => "8"
     ));
 
@@ -42,7 +48,7 @@
         "class" => "form-control",
         "placeholder" => "Exemplo: Avenida Francisco Glicério",
         "id" => "logradouro",
-        "value" => "",
+        "value" => $fornecedor['logradouro'],
         "maxlength" => "255"
     ));
 
@@ -52,7 +58,7 @@
         "class" => "form-control",
         "placeholder" => "Exemplo: 2601",
         "id" => "numero",
-        "value" => "",
+        "value" => $fornecedor['numero'],
         "maxlength" => "10"
     ));
 
@@ -62,7 +68,7 @@
         "class" => "form-control",
         "placeholder" => "Exemplo: Conceição",
         "id" => "bairro",
-        "value" => "",
+        "value" => $fornecedor['bairro'],
         "maxlength" => "255"
     ));
 
@@ -72,7 +78,7 @@
         "class" => "form-control",
         "placeholder" => "Exemplo: Campinas",
         "id" => "municipio",
-        "value" => "",
+        "value" => $fornecedor['municipio'],
         "maxlength" => "255"
     ));
 
@@ -82,7 +88,7 @@
         "class" => "form-control",
         "placeholder" => "Exemplo: São Paulo",
         "id" => "estado",
-        "value" => "",
+        "value" => $fornecedor['estado'],
         "maxlength" => "255"
     ));
 
@@ -92,7 +98,7 @@
         "class" => "form-control",
         "placeholder" => "Exemplo: Brasil",
         "id" => "pais",
-        "value" => "",
+        "value" => $fornecedor['pais'],
         "maxlength" => "255"
     ));
 
@@ -101,7 +107,7 @@
         "name" => "responsavelVendas",
         "class" => "form-control",
         "id" => "vendas",
-        "value" => "",
+        "value" => $fornecedor['responsavelVendas'],
         "maxlength" => "255"
     ));
 
@@ -110,7 +116,7 @@
         "name" => "cnpj_cpf",
         "class" => "form-control",                   
         "id" => "cnpj_cpf",
-        "value" => "",
+        "value" => $fornecedor['cnpj_cpf'],
         "maxlength" => "20"
     ));
 ?>

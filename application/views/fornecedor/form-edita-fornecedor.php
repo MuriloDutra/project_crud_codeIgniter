@@ -7,7 +7,17 @@
         <div class="container">
             <h1>Editar fornecedor</h1>
             <?php
+                echo form_open("fornecedor/editaFornecedor");
+
                 include("formulario-base.php");
+                
+                echo form_button(array(
+                    "content" => "Atualizar dados",
+                    "class" => "btn btn-primary",
+                    "type" => "submit"
+                ));
+
+                echo form_close();
             ?>
         </div>
     </body>

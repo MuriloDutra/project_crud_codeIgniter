@@ -10,4 +10,19 @@
         {
             $this->db->insert("fornecedor", $fornecedor);
         }
+
+        public function buscaPorId($id)
+        {
+            $this->db->where("id", $id);
+            $fornecedor = $this->db->get("fornecedor")->row_array();
+
+            return $fornecedor;
+        }
+
+        public function atualizaFornecedor($fornecedor)
+        {
+            $this->db->where("id", $fornecedor['id']);
+            $this->db->set($fornecedor);
+            $this->db->update("fornecedor");
+        }
     }
