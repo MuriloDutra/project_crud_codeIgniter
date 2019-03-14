@@ -25,4 +25,10 @@
             $this->db->set($fornecedor);
             $this->db->update("fornecedor");
         }
+
+        public function deletaFornecedor($id)
+        {
+            $this->db->where("id", $id);
+            $this->db->delete("fornecedor");
+        }
     }

@@ -5,7 +5,6 @@
     {
         public function index()
         {
-            $this->load->model("fornecedor_model");
             $fornecedores = $this->fornecedor_model->retornaTodos();
             
             $dados = array("fornecedores" => $fornecedores);
@@ -52,7 +51,6 @@
                 "cnpj_cpf" => $this->input->post("cnpj_cpf")
             );
 
-            $this->load->model("fornecedor_model");
             $this->fornecedor_model->adicionaFornecedor($fornecedor);
 
             redirect("/");
@@ -62,9 +60,6 @@
         public function edita()
         {
             $id = $this->input->post("id");
-
-            $this->load->model("fornecedor_model");
-
             $fornecedor = $this->fornecedor_model->buscaPorId($id);
             $dados = array("fornecedor" => $fornecedor);
 
@@ -89,7 +84,6 @@
                 "cnpj_cpf" => $this->input->post("cnpj_cpf")
             );
 
-            $this->load->model("fornecedor_model");
             $this->fornecedor_model->atualizaFornecedor($fornecedor);
 
             redirect("/");
@@ -99,8 +93,6 @@
         public function detalhes()
         {
             $id = $this->input->post("id");
-
-            $this->load->model("fornecedor_model");
             $fornecedor = $this->fornecedor_model->buscaPorId($id);
 
             $dados = array("fornecedor" => $fornecedor);
@@ -108,8 +100,17 @@
             $this->load->view("fornecedor/form-detalhes-fornecedor.php", $dados);
         }
 
+        // DELETA FORNECEDOR
         public function deleta()
         {
             $this->load->view("fornecedor/confirmaDelete.php");
+        }
+
+        public function deletaFornecedor()
+        {
+            $id = $this->input->post("id");
+            $this->fornecedor_model->deletaFornecedor($id);
+ 
+            redirect("/");
         }
     }

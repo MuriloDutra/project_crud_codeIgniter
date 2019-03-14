@@ -9,10 +9,6 @@
         <div class="container">    
             <div id="cabecalho">
                 <h1>Fornecedores cadastrados</h1>
-                <ul class="nav navbar-nav">
-                    <li><a href="index.php">Lista de fornecedores</a></li>
-                </ul>
-            </div>
             <?php 
                 echo form_open("fornecedor/adiciona");
                 
@@ -79,6 +75,11 @@
                                     "name" => "id",
                                     "type" => "hidden",
                                     "value" => $fornecedor['id']));
+
+                                echo form_input(array(
+                                    "name" => "nome",
+                                    "type" => "hidden",
+                                    "value" => $fornecedor['nome']));
 
                                 echo form_button(array(
                                     "class" => "btn",
