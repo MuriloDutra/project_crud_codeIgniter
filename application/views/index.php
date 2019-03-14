@@ -1,13 +1,18 @@
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="<?= base_url("css/index.css") ?>">
         <link rel="stylesheet" href="<?= base_url("css/bootstrap.css") ?>">
-        <link rel="stylesheet" href="css/index.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <h1>Fornecedores cadastrados</h1>
+        <div class="container">    
+            <div id="cabecalho">
+                <h1>Fornecedores cadastrados</h1>
+                <ul class="nav navbar-nav">
+                    <li><a href="index.php">Lista de fornecedores</a></li>
+                </ul>
+            </div>
             <?php 
                 echo form_open("fornecedor/adiciona");
                 

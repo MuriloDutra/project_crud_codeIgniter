@@ -15,7 +15,24 @@
         // ADICIONA NOVO FORNECEDOR
         public function adiciona()
         {
-            $this->load->view("fornecedor/form-adiciona-fornecedor.php");
+            $fornecedor = array(
+                "id" => "",
+                "nome" => "",
+                "email" => "",
+                "telefone" => "",
+                "cep" => "",
+                "logradouro" => "",
+                "numero" => "",
+                "bairro" => "",
+                "municipio" => "",
+                "estado" => "",
+                "pais" => "",
+                "responsavelVendas" => "",
+                "cnpj_cpf" => ""
+            );
+
+            $dados = array("fornecedor" => $fornecedor);
+            $this->load->view("fornecedor/form-adiciona-fornecedor.php", $dados);
         }
 
         public function novoFornecedor()
@@ -26,7 +43,8 @@
                 "telefone" => $this->input->post("telefone"),
                 "cep" => $this->input->post("cep"),
                 "logradouro" => $this->input->post("logradouro"),
-                "numero" => $this->input->post("bairro"),
+                "numero" => $this->input->post("numero"),
+                "bairro" => $this->input->post("bairro"),
                 "municipio" => $this->input->post("municipio"),
                 "estado" => $this->input->post("estado"),
                 "pais" => $this->input->post("pais"),
@@ -36,7 +54,7 @@
 
             $this->load->model("fornecedor_model");
             $this->fornecedor_model->adicionaFornecedor($fornecedor);
-            
+
             redirect("/");
         }
 
@@ -62,7 +80,8 @@
                 "telefone" => $this->input->post("telefone"),
                 "cep" => $this->input->post("cep"),
                 "logradouro" => $this->input->post("logradouro"),
-                "numero" => $this->input->post("bairro"),
+                "numero" => $this->input->post("numero"),
+                "bairro" => $this->input->post("bairro"),
                 "municipio" => $this->input->post("municipio"),
                 "estado" => $this->input->post("estado"),
                 "pais" => $this->input->post("pais"),
@@ -79,7 +98,14 @@
         // DETALHES FORNECEDOR
         public function detalhes()
         {
-            $this->load->view("fornecedor/form-detalhes-fornecedor.php");
+            $id = $this->input->post("id");
+
+            $this->load->model("fornecedor_model");
+            $fornecedor = $this->fornecedor_model->buscaPorId($id);
+
+            $dados = array("fornecedor" => $fornecedor);
+
+            $this->load->view("fornecedor/form-detalhes-fornecedor.php", $dados);
         }
 
         public function deleta()

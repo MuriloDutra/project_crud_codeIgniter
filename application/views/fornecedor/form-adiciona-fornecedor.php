@@ -1,12 +1,17 @@
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="<?= base_url("css/index.css") ?>">
         <link rel="stylesheet" href="<?= base_url("css/bootstrap.css") ?>">
     </head>
     <body>
         <div class="container">
-            <h1>Adicionar fornecedor</h1>
+            <div id="cabecalho">
+                <h1>Adicionar fornecedor</h1>
+                <ul class="nav navbar-nav">
+                    <li><a href="<?= base_url("index.php") ?>">Lista de fornecedores</a></li>
+                </ul>
+            </div>
             <?php 
                 echo form_open("fornecedor/novoFornecedor");
 
